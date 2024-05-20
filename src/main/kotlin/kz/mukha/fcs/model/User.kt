@@ -5,6 +5,7 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.Id
 import jakarta.persistence.Table
+import java.time.LocalDateTime
 import java.util.UUID
 
 @Entity
@@ -18,5 +19,14 @@ data class User(
     val username: String,
 
     @Column(nullable = false)
-    val password: String
+    val password: String,
+
+    @Column(nullable = false)
+    val email: String,
+
+    @Column(nullable = false)
+    val createdAt: LocalDateTime,
+
+    @Column(nullable = false)
+    val updatedAt: LocalDateTime = LocalDateTime.now(),
 )
